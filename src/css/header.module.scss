@@ -1,0 +1,17 @@
+.hero {
+    background: url("../images/paintball-in-the-woods.webp");
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    .row {
+      .col {
+        .title, 
+        .subtitle {
+          color: #fff;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+        }
+      }
+    }
+  }
