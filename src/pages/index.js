@@ -1,12 +1,33 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import {Container} from 'react-bootstrap'
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
+// Custom Bootswatch css
+import '../css/bootstrap.min.css'
+
+
+const IndexPage = () => {
+  
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title,
+          subtitle
+        }
+      }
+    }
+  `)
+
+  const {title} = data.site.siteMetadata.title
+  const {subtitle} = data.site.siteMetadata.subtitle
+  
+  return (
+  <Layout title={title} subtitle={subtitle}>
     <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -26,6 +47,6 @@ const IndexPage = () => (
       <Link to="/using-dsg">Go to "Using DSG"</Link>
     </p>
   </Layout>
-)
+)}
 
 export default IndexPage
