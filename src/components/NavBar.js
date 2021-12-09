@@ -1,17 +1,34 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { Container, Offcanvas, Nav, NavDropdown, FormControl, Button, Navbar, Form } from 'react-bootstrap'
+import { StaticImage } from 'gatsby-plugin-image'
+import { Container, Row, Col, Offcanvas, Nav, NavDropdown, FormControl, Button, Navbar, Form } from 'react-bootstrap'
+import { FaRegCreditCard } from 'react-icons/fa'
 
 import data from '../constants/menu'
+import TopBar from './TopBar'
+
+const alienGreen = {
+  color: "#d5df9f"
+}
+
+const logoContainer = {
+  borderBottom: '1px solid #d5df9f'
+}
 
 const NavBar = ({title}) => {
     return (
-        <Navbar bg="dark" variant="dark" expand={false}>
+      <>
+          <TopBar className="ms-auto" />
+        <Navbar bg="dark" variant="dark" expand={false} className="pe-3">
   <Container fluid>
-    <Navbar.Brand as={Link} to="/">{title}</Navbar.Brand>
+    <Navbar.Brand as={Link} to="/" className="mx-auto p-1" style={logoContainer}>
+      <span>Area</span> <span style={alienGreen}>51</span> <span>Paintball</span>
+      </Navbar.Brand>
+    <Nav className="flex-row">
     {data.map((item) => {
-            return <Button size='sm' variant='dark' bg='dark' as={Link} key={item.id} to={item.url} title={item.title} className="d-none d-lg-inline-block">{item.title}</Button>
+            return <Button size='sm' variant='dark' bg='dark' as={Link} key={item.id} to={item.url} title={item.title} className="d-none d-lg-inline-block" >{item.title}</Button>
           })}
+          </Nav>
     <Navbar.Toggle aria-controls="offcanvasNavbar" />
     <Navbar.Offcanvas
       id="offcanvasNavbar"
@@ -40,6 +57,7 @@ const NavBar = ({title}) => {
     </Navbar.Offcanvas>
   </Container>
 </Navbar>
+</>
     )
 }
 

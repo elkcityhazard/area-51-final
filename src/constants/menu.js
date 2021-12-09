@@ -1,18 +1,13 @@
 const data = [
     {
-        "id" : 1,
-        "title" : "Home",
-        "url" : '/'
-    },
-    {
         "id" : 2,
-        "title" : "About",
-        "url" : '/about-us'
+        "title" : "Paintball Center",
+        "url" : '/paintball-center'
     },
     {
         "id" : 3,
-        "title" : "Pricing",
-        "url" : '/pricing'
+        "title" : "Paintball Services",
+        "url" : '/paintball-services'
     },
     {
         "id" : 4,
@@ -36,8 +31,8 @@ const data = [
     },
     {
         "id" : 8,
-        "title" : "News",
-        "url" : '/news-and-updates'
+        "title" : "FAQ",
+        "url" : '/frequently-asked-questions'
     }
 ]
 
